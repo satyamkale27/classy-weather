@@ -128,10 +128,12 @@ class Day extends React.Component {
   render() {
     const { date, max, min, code } = this.props;
     return (
-      <li>
-        <p>{date}</p>
+      <li className="day">
+        <span>{getWeatherIcon(code)}</span>
+        <p>{formatDay(date)}</p>
         <p>
-          {min} &deg; &mdash; {max} &deg;
+          {Math.floor(min)} &deg; &mdash;{" "}
+          <strong>{Math.ceil(max)} &deg;</strong>
         </p>
       </li>
     );
